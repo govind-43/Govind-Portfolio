@@ -176,8 +176,40 @@ button{
     padding:150px 0 100px;
 }
 
+    /* ================= HERO BACKGROUND IMAGE ================= */
+
+.hero-bg{
+    position:absolute;
+    inset:0;
+    z-index:0;
+    background-image:url("hero.jpg");   /* ✅ apni image ka path/naam yahan */
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    opacity:.35;                        /* image ki visibility — 0.2 = halki, 0.6 = zyada */
+    filter:blur(1px) saturate(1.1);     /* halka blur premium feel deta hai */
+    pointer-events:none;
+}
+
+/* Dark overlay taaki text hamesha readable rahe */
+.hero-bg:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(180deg,
+            rgba(6,6,12,.85) 0%,
+            rgba(6,6,12,.65) 40%,
+            rgba(6,6,12,.85) 100%),
+        linear-gradient(90deg,
+            rgba(6,6,12,.9) 0%,
+            rgba(6,6,12,.4) 60%,
+            rgba(6,6,12,.7) 100%);
+}
+    
 .hero-glow{
     position:absolute;
+    z-index:1;
     width:650px;
     height:650px;
     border-radius:50%;
@@ -189,6 +221,7 @@ button{
 
 .hero-glow-2{
     position:absolute;
+    z-index:1;
     width:520px;
     height:520px;
     border-radius:50%;
@@ -200,6 +233,7 @@ button{
 
 .hero-grid{
     position:absolute;
+    z-index:1;
     inset:0;
     opacity:.035;
     background-image:
@@ -1363,6 +1397,32 @@ footer{
     }
 
 }
+    /* ================= HERO BG — RESPONSIVE ================= */
+
+/* Tablet */
+@media(max-width:900px){
+    .hero-bg{
+        opacity:.28;
+        background-position:center 30%;   /* thoda upar shift */
+    }
+}
+
+/* Mobile */
+@media(max-width:600px){
+    .hero-bg{
+        opacity:.22;                       /* mobile pe halki, taaki text crisp rahe */
+        background-position:center top;
+        background-size:cover;
+        filter:blur(0px) saturate(1.05);
+    }
+    .hero-bg:after{
+        background:
+            linear-gradient(180deg,
+                rgba(6,6,12,.9) 0%,
+                rgba(6,6,12,.7) 45%,
+                rgba(6,6,12,.95) 100%);
+      }
+    }
 
 </style>
 </head>
@@ -1398,6 +1458,7 @@ footer{
 
 <!-- ================= HERO ================= -->
 <section class="hero">
+  <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
   <div class="hero-glow-2"></div>
