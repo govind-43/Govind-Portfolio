@@ -1,0 +1,2269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Govind Web Studio — Websites That Win Attention</title>
+<meta name="description" content="Govind Web Studio creates modern, high-converting websites for local businesses, real estate brands, interior designers, restaurants and growing businesses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --bg:#06060c;
+    --bg-soft:#0b0b13;
+    --card:#101018;
+    --card-2:#15151f;
+    --text:#f8f8fb;
+    --muted:#9595ad;
+
+    /* ===== HIGH ENERGY PALETTE ===== */
+    --pink:#ff2e6e;
+    --violet:#7c3aed;
+    --cyan:#00e0ff;
+    --amber:#ffb020;
+
+    --grad:linear-gradient(100deg,#ff2e6e 0%,#7c3aed 55%,#00e0ff 100%);
+    --grad-btn:linear-gradient(100deg,#ff2e6e 0%,#7c3aed 100%);
+
+    --border:rgba(255,255,255,.09);
+    --border-light:rgba(255,255,255,.14);
+    --radius:22px;
+    --max:1180px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:"DM Sans",sans-serif;
+    overflow-x:hidden;
+}
+
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.025;
+    z-index:9999;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+button{
+    font-family:inherit;
+}
+
+.container{
+    width:min(var(--max),calc(100% - 40px));
+    margin:auto;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:1000;
+    padding:18px 0;
+    transition:.3s;
+}
+
+.navbar.scrolled{
+    background:rgba(6,6,12,.82);
+    backdrop-filter:blur(20px);
+    border-bottom:1px solid var(--border);
+}
+
+.nav-inner{
+    width:min(1180px,calc(100% - 40px));
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+/* ---------- LOGO ---------- */
+.logo{
+    display:inline-flex;
+    align-items:center;
+    text-decoration:none;
+}
+
+.logo-img{
+    height:40px;
+    width:auto;
+    display:block;
+}
+
+@media(max-width:600px){
+    .logo-img{
+        height:32px;
+    }
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+.nav-links a{
+    color:#b7b7c6;
+    font-size:14px;
+    font-weight:600;
+    transition:.25s;
+}
+
+.nav-links a:hover{
+    color:#fff;
+}
+
+.nav-cta{
+    background:var(--grad-btn);
+    color:#fff !important;
+    padding:11px 18px;
+    border-radius:100px;
+    font-weight:800 !important;
+    box-shadow:0 8px 24px rgba(255,46,110,.28);
+}
+
+.nav-cta:hover{
+    transform:translateY(-2px);
+    box-shadow:0 14px 34px rgba(255,46,110,.45);
+}
+
+.menu{
+    display:none;
+    background:none;
+    border:0;
+    color:#fff;
+    font-size:25px;
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    padding:150px 0 100px;
+}
+
+.hero-glow{
+    position:absolute;
+    width:650px;
+    height:650px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(255,46,110,.22),transparent 68%);
+    right:-200px;
+    top:-180px;
+    pointer-events:none;
+}
+
+.hero-glow-2{
+    position:absolute;
+    width:520px;
+    height:520px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(0,224,255,.14),transparent 68%);
+    left:-250px;
+    bottom:-250px;
+    pointer-events:none;
+}
+
+.hero-grid{
+    position:absolute;
+    inset:0;
+    opacity:.035;
+    background-image:
+        linear-gradient(rgba(255,255,255,.4) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.4) 1px,transparent 1px);
+    background-size:70px 70px;
+    mask-image:linear-gradient(to bottom,black,transparent);
+    -webkit-mask-image:linear-gradient(to bottom,black,transparent);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:950px;
+}
+
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    border:1px solid rgba(255,46,110,.30);
+    background:rgba(255,46,110,.08);
+    color:#ff6f9c;
+    padding:8px 13px;
+    border-radius:100px;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:.5px;
+    margin-bottom:25px;
+}
+
+.live-dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:var(--pink);
+    box-shadow:0 0 15px var(--pink);
+}
+
+.hero h1{
+    font-family:"Manrope",sans-serif;
+    font-size:clamp(48px,7vw,92px);
+    line-height:.98;
+    letter-spacing:-5px;
+    max-width:1000px;
+}
+
+.hero h1 .gradient{
+    background:linear-gradient(100deg,#ff2e6e 0%,#7c3aed 45%,#00e0ff 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.hero-description{
+    max-width:650px;
+    color:#a5a5b6;
+    font-size:18px;
+    line-height:1.7;
+    margin:30px 0;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:13px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    padding:15px 22px;
+    border-radius:100px;
+    font-size:14px;
+    font-weight:800;
+    transition:.25s;
+    cursor:pointer;
+    border:0;
+}
+
+.btn-primary{
+    background:var(--grad-btn);
+    color:#fff;
+    box-shadow:0 10px 30px rgba(255,46,110,.3);
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 18px 45px rgba(255,46,110,.5);
+}
+
+.btn-secondary{
+    border:1px solid var(--border-light);
+    background:rgba(255,255,255,.03);
+    color:#fff;
+}
+
+.btn-secondary:hover{
+    background:#fff;
+    color:#08080d;
+}
+
+.hero-bottom{
+    display:flex;
+    gap:45px;
+    margin-top:70px;
+    flex-wrap:wrap;
+}
+
+.hero-stat strong{
+    display:block;
+    font-family:"Manrope",sans-serif;
+    font-size:24px;
+}
+
+.hero-stat span{
+    display:block;
+    color:#77778a;
+    font-size:12px;
+    margin-top:4px;
+}
+
+/* ================= TRUST BAR ================= */
+
+.trust{
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+    padding:25px 0;
+    background:#09090f;
+}
+
+.trust-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.trust-label{
+    color:#666678;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    font-weight:800;
+}
+
+.trust-items{
+    display:flex;
+    gap:35px;
+    flex-wrap:wrap;
+}
+
+.trust-items span{
+    color:#aaaab8;
+    font-size:13px;
+}
+
+/* ================= COMMON ================= */
+
+section{
+    padding:115px 0;
+}
+
+.section-top{
+    display:flex;
+    align-items:end;
+    justify-content:space-between;
+    gap:30px;
+    margin-bottom:50px;
+}
+
+.section-label{
+    background:var(--grad);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:11px;
+    font-weight:800;
+    margin-bottom:13px;
+}
+
+.section-title{
+    font-family:"Manrope",sans-serif;
+    font-size:clamp(32px,4vw,55px);
+    line-height:1.05;
+    letter-spacing:-2.5px;
+    max-width:720px;
+}
+
+.section-description{
+    color:#88889a;
+    max-width:440px;
+    line-height:1.7;
+    font-size:15px;
+}
+
+/* ================= PROJECTS ================= */
+
+.projects{
+    background:#09090f;
+}
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+}
+
+.project{
+    position:relative;
+    min-height:450px;
+    border:1px solid var(--border);
+    border-radius:26px;
+    overflow:hidden;
+    background:#111119;
+    transition:.4s;
+}
+
+.project:hover{
+    transform:translateY(-7px);
+    border-color:rgba(255,46,110,.35);
+    box-shadow:0 25px 60px rgba(255,46,110,.12);
+}
+
+.project-image{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+}
+
+.project-image:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top,rgba(6,6,12,.95),rgba(6,6,12,.15) 70%);
+}
+
+.project-image img{
+    height:100%;
+    object-fit:cover;
+    transition:.7s;
+}
+
+.project:hover .project-image img{
+    transform:scale(1.05);
+}
+
+.project-content{
+    position:absolute;
+    z-index:2;
+    left:30px;
+    right:30px;
+    bottom:28px;
+}
+
+.project-number{
+    color:#ff4d80;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+.project h3{
+    font-family:"Manrope",sans-serif;
+    font-size:30px;
+    letter-spacing:-1px;
+    margin:7px 0;
+}
+
+.project p{
+    color:#b0b0bd;
+    font-size:13px;
+    max-width:450px;
+    line-height:1.6;
+}
+
+.project-tag{
+    display:inline-block;
+    margin-top:16px;
+    padding:7px 10px;
+    border:1px solid rgba(255,255,255,.13);
+    background:rgba(255,255,255,.06);
+    border-radius:100px;
+    font-size:10px;
+    color:#ddd;
+}
+
+/* ================= SERVICES ================= */
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    border-top:1px solid var(--border);
+    border-left:1px solid var(--border);
+}
+
+.service{
+    padding:35px;
+    min-height:250px;
+    border-right:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+    transition:.3s;
+}
+
+.service:hover{
+    background:linear-gradient(145deg,rgba(255,46,110,.08),rgba(124,58,237,.05) 45%,transparent);
+}
+
+.service-number{
+    color:#ff4d80;
+    font-size:11px;
+    font-weight:800;
+}
+
+.service-icon{
+    font-size:27px;
+    margin:25px 0 18px;
+}
+
+.service h3{
+    font-family:"Manrope",sans-serif;
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+.service p{
+    color:#85859a;
+    font-size:13px;
+    line-height:1.7;
+}
+
+/* ================= INDUSTRIES ================= */
+
+.industries{
+    background:#09090f;
+}
+
+.industry-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+}
+
+.industry{
+    border:1px solid var(--border);
+    background:#101018;
+    border-radius:18px;
+    padding:25px;
+    min-height:150px;
+    transition:.3s;
+}
+
+.industry:hover{
+    border-color:rgba(0,224,255,.32);
+    transform:translateY(-4px);
+    box-shadow:0 18px 40px rgba(0,224,255,.08);
+}
+
+.industry-icon{
+    font-size:25px;
+    margin-bottom:22px;
+}
+
+.industry h3{
+    font-size:16px;
+}
+
+.industry p{
+    color:#77778a;
+    font-size:12px;
+    margin-top:6px;
+}
+
+/* ================= WHY ================= */
+
+.why-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.big-statement{
+    font-family:"Manrope",sans-serif;
+    font-size:clamp(34px,4.5vw,60px);
+    line-height:1.02;
+    letter-spacing:-3px;
+}
+
+.big-statement span{
+    background:var(--grad);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.features{
+    display:grid;
+    gap:12px;
+}
+
+.feature{
+    display:flex;
+    gap:18px;
+    padding:20px;
+    border:1px solid var(--border);
+    border-radius:17px;
+    background:#0d0d15;
+    transition:.3s;
+}
+
+.feature:hover{
+    border-color:rgba(255,46,110,.28);
+    transform:translateX(4px);
+}
+
+.feature-number{
+    width:34px;
+    height:34px;
+    flex-shrink:0;
+    border-radius:10px;
+    display:grid;
+    place-items:center;
+    background:rgba(255,46,110,.12);
+    color:#ff6f9c;
+    font-size:11px;
+    font-weight:800;
+}
+
+.feature h3{
+    font-size:15px;
+    margin-bottom:4px;
+}
+
+.feature p{
+    color:#77778a;
+    font-size:12px;
+    line-height:1.6;
+}
+
+/* ================= PROCESS ================= */
+
+.process{
+    background:#09090f;
+}
+
+.process-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.step{
+    padding:28px;
+    border:1px solid var(--border);
+    border-radius:20px;
+    background:#101018;
+    position:relative;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.step:hover{
+    transform:translateY(-5px);
+    border-color:rgba(124,58,237,.4);
+}
+
+.step:before{
+    content:"";
+    position:absolute;
+    left:28px;
+    right:28px;
+    top:0;
+    height:2px;
+    background:linear-gradient(90deg,var(--pink),var(--violet),var(--cyan),transparent);
+}
+
+.step-number{
+    color:#ff4d80;
+    font-size:11px;
+    font-weight:800;
+    margin:18px 0 25px;
+}
+
+.step h3{
+    font-family:"Manrope",sans-serif;
+    margin-bottom:9px;
+}
+
+.step p{
+    color:#77778a;
+    font-size:13px;
+    line-height:1.65;
+}
+
+/* ================= PRICING ================= */
+
+.pricing-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.price-card{
+    border:1px solid var(--border);
+    border-radius:23px;
+    padding:32px;
+    background:#101018;
+    position:relative;
+    transition:.3s;
+}
+
+.price-card:hover{
+    transform:translateY(-5px);
+    border-color:rgba(255,255,255,.18);
+}
+
+.price-card.featured{
+    border-color:rgba(255,46,110,.45);
+    background:linear-gradient(145deg,rgba(255,46,110,.10),rgba(124,58,237,.06) 40%,#101018 70%);
+    box-shadow:0 25px 70px rgba(255,46,110,.12);
+}
+
+.popular{
+    position:absolute;
+    top:20px;
+    right:20px;
+    background:var(--grad-btn);
+    color:#fff;
+    font-size:9px;
+    font-weight:900;
+    padding:6px 10px;
+    border-radius:100px;
+    text-transform:uppercase;
+    letter-spacing:.6px;
+}
+
+.price-card h3{
+    font-family:"Manrope",sans-serif;
+    font-size:20px;
+}
+
+.price-description{
+    color:#77778a;
+    font-size:12px;
+    margin:9px 0 22px;
+    line-height:1.5;
+}
+
+.price{
+    font-family:"Manrope",sans-serif;
+    font-size:38px;
+    font-weight:800;
+    letter-spacing:-2px;
+    margin-bottom:24px;
+}
+
+.price span{
+    font-size:12px;
+    color:#77778a;
+    letter-spacing:0;
+    font-weight:400;
+}
+
+.price-list{
+    list-style:none;
+    border-top:1px solid var(--border);
+    padding-top:20px;
+    display:grid;
+    gap:13px;
+    margin-bottom:25px;
+}
+
+.price-list li{
+    color:#aaaab8;
+    font-size:12px;
+}
+
+.price-list li:before{
+    content:"✓";
+    color:var(--cyan);
+    margin-right:9px;
+    font-weight:800;
+}
+
+/* ================= TESTIMONIAL ================= */
+
+.testimonials{
+    background:#09090f;
+}
+
+.testimonial-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+.testimonial{
+    padding:30px;
+    border:1px solid var(--border);
+    border-radius:21px;
+    background:#101018;
+    transition:.3s;
+}
+
+.testimonial:hover{
+    border-color:rgba(255,176,32,.3);
+    transform:translateY(-4px);
+}
+
+.stars{
+    color:var(--amber);
+    letter-spacing:2px;
+    font-size:12px;
+    margin-bottom:20px;
+}
+
+.testimonial p{
+    color:#c2c2cc;
+    font-size:14px;
+    line-height:1.7;
+}
+
+.client{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-top:25px;
+}
+
+.client-avatar{
+    width:37px;
+    height:37px;
+    border-radius:50%;
+    background:linear-gradient(135deg,var(--pink),var(--violet) 55%,var(--cyan));
+    display:grid;
+    place-items:center;
+    color:#fff;
+    font-size:11px;
+    font-weight:900;
+}
+
+.client strong{
+    display:block;
+    font-size:12px;
+}
+
+.client span{
+    color:#666678;
+    font-size:10px;
+}
+
+/* ================= FAQ ================= */
+
+.faq-grid{
+    max-width:850px;
+    margin:auto;
+}
+
+.faq{
+    border-bottom:1px solid var(--border);
+}
+
+.faq button{
+    width:100%;
+    padding:23px 0;
+    background:none;
+    border:0;
+    color:#fff;
+    text-align:left;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:15px;
+    font-weight:700;
+    cursor:pointer;
+    gap:20px;
+}
+
+.faq button span{
+    color:#ff4d80;
+    font-size:20px;
+}
+
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:.35s;
+}
+
+.faq-answer p{
+    color:#80808f;
+    font-size:13px;
+    line-height:1.7;
+    padding:0 0 20px;
+}
+
+/* ================= CTA ================= */
+
+.cta{
+    padding:80px 0;
+}
+
+.cta-box{
+    position:relative;
+    overflow:hidden;
+    border:1px solid rgba(255,46,110,.3);
+    border-radius:30px;
+    padding:70px;
+    background:
+        radial-gradient(circle at 90% 20%,rgba(124,58,237,.35),transparent 38%),
+        radial-gradient(circle at 8% 95%,rgba(255,46,110,.22),transparent 38%),
+        radial-gradient(circle at 50% 120%,rgba(0,224,255,.14),transparent 40%),
+        #101018;
+}
+
+.cta-box h2{
+    font-family:"Manrope",sans-serif;
+    font-size:clamp(40px,5vw,65px);
+    line-height:1;
+    letter-spacing:-3px;
+    max-width:700px;
+}
+
+.cta-box p{
+    color:#9999ab;
+    max-width:540px;
+    line-height:1.7;
+    margin:22px 0 28px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+    background:#09090f;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+}
+
+.contact-info h2{
+    font-family:"Manrope",sans-serif;
+    font-size:45px;
+    letter-spacing:-2px;
+    line-height:1.05;
+}
+
+.contact-info p{
+    color:#88889a;
+    line-height:1.7;
+    margin:18px 0 30px;
+    max-width:480px;
+}
+
+.contact-links{
+    display:grid;
+    gap:10px;
+}
+
+.contact-link{
+    display:flex;
+    align-items:center;
+    gap:13px;
+    padding:17px;
+    border:1px solid var(--border);
+    border-radius:14px;
+    background:#101018;
+    transition:.3s;
+}
+
+.contact-link:hover{
+    border-color:rgba(255,46,110,.4);
+    transform:translateY(-3px);
+}
+
+.contact-link-icon{
+    width:34px;
+    height:34px;
+    border-radius:9px;
+    background:rgba(255,46,110,.12);
+    color:#ff6f9c;
+    display:grid;
+    place-items:center;
+    flex-shrink:0;
+}
+
+.contact-link small{
+    display:block;
+    color:#656578;
+    font-size:10px;
+    margin-bottom:2px;
+}
+
+.contact-link strong{
+    font-size:13px;
+}
+
+.contact-form{
+    display:grid;
+    gap:13px;
+}
+
+.input{
+    width:100%;
+    border:1px solid var(--border);
+    background:#101018;
+    color:#fff;
+    padding:16px;
+    border-radius:13px;
+    outline:none;
+    font-family:inherit;
+    font-size:13px;
+    transition:.25s;
+}
+
+.input:focus{
+    border-color:rgba(255,46,110,.55);
+    box-shadow:0 0 0 3px rgba(255,46,110,.12);
+}
+
+select.input{
+    appearance:none;
+    -webkit-appearance:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%239999ab' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;
+    background-position:right 16px center;
+    padding-right:44px;
+    cursor:pointer;
+}
+
+select.input option{
+    background:#101018;
+    color:#fff;
+}
+
+textarea.input{
+    min-height:140px;
+    resize:vertical;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    padding:35px 0;
+    border-top:1px solid var(--border);
+}
+
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.footer-copy{
+    color:#5e5e70;
+    font-size:11px;
+}
+
+.footer-links{
+    display:flex;
+    gap:20px;
+}
+
+.footer-links a{
+    color:#77778a;
+    font-size:11px;
+    transition:.25s;
+}
+
+.footer-links a:hover{
+    color:#fff;
+}
+
+/* ================= REVEAL ================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(25px);
+    transition:opacity .7s ease,transform .7s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:none;
+}
+
+/* ================= CURSOR GLOW ================= */
+
+.cursor-glow{
+    position:fixed;
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(255,46,110,.07),rgba(124,58,237,.04) 45%,transparent 68%);
+    pointer-events:none;
+    transform:translate(-50%,-50%);
+    z-index:0;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+    .nav-links{
+        position:absolute;
+        top:72px;
+        left:20px;
+        right:20px;
+        padding:20px;
+        background:#101018;
+        border:1px solid var(--border);
+        border-radius:18px;
+        flex-direction:column;
+        align-items:stretch;
+        gap:4px;
+        display:none;
+        box-shadow:0 25px 60px rgba(0,0,0,.6);
+    }
+
+    .nav-links.open{
+        display:flex;
+    }
+
+    .nav-links a{
+        padding:13px;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .nav-cta{
+        text-align:center;
+    }
+
+    .projects-grid,
+    .why-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .services-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .industry-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .process-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .pricing-grid,
+    .testimonial-grid{
+        grid-template-columns:1fr;
+    }
+
+    .why-grid{
+        gap:40px;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .container,
+    .nav-inner{
+        width:min(100% - 28px,var(--max));
+    }
+
+    section{
+        padding:80px 0;
+    }
+
+    .hero{
+        padding:130px 0 80px;
+    }
+
+    .hero h1{
+        font-size:48px;
+        letter-spacing:-3px;
+    }
+
+    .hero-description{
+        font-size:15px;
+    }
+
+    .hero-bottom{
+        margin-top:45px;
+        gap:25px;
+    }
+
+    .trust-items{
+        gap:15px;
+    }
+
+    .section-top{
+        display:block;
+        margin-bottom:32px;
+    }
+
+    .section-description{
+        margin-top:17px;
+    }
+
+    .projects-grid{
+        gap:14px;
+    }
+
+    .project{
+        min-height:390px;
+    }
+
+    .services-grid{
+        grid-template-columns:1fr;
+    }
+
+    .industry-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .process-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cta-box{
+        padding:40px 25px;
+        border-radius:23px;
+    }
+
+    .cta-box h2{
+        font-size:42px;
+        letter-spacing:-2px;
+    }
+
+    .contact-info h2{
+        font-size:38px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+
+    <!-- ✅ YOUR ACTUAL LOGO: Save your logo file as logo.png in the same folder -->
+    <a href="#" class="logo">
+      <img src="logo.png" alt="Govind Web Studio" class="logo-img">
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="nav-cta">Let's Talk ↗</a>
+    </nav>
+
+    <button class="menu" id="menuBtn">☰</button>
+
+  </div>
+</header>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
+
+  <div class="container">
+    <div class="hero-content reveal">
+
+      <div class="eyebrow">
+        <span class="live-dot"></span>
+        AVAILABLE FOR NEW PROJECTS
+      </div>
+
+      <h1>
+        Websites that make
+        <span class="gradient">businesses impossible to ignore.</span>
+      </h1>
+
+      <p class="hero-description">
+        I design and build modern, mobile-first websites for local businesses
+        that want to look professional, build trust and generate more enquiries.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#work" class="btn btn-primary">Explore My Work ↗</a>
+        <a href="#contact" class="btn btn-secondary">Get a Free Demo</a>
+      </div>
+
+      <div class="hero-bottom">
+        <div class="hero-stat">
+          <strong>100%</strong>
+          <span>Responsive</span>
+        </div>
+        <div class="hero-stat">
+          <strong>Fast</strong>
+          <span>Lightweight builds</span>
+        </div>
+        <div class="hero-stat">
+          <strong>24/7</strong>
+          <span>Online presence</span>
+        </div>
+        <div class="hero-stat">
+          <strong>Lead</strong>
+          <span>Focused design</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRUST ================= -->
+<div class="trust">
+  <div class="container trust-inner">
+    <div class="trust-label">
+      Built for businesses that want to grow
+    </div>
+    <div class="trust-items">
+      <span>REAL ESTATE</span>
+      <span>INTERIOR DESIGN</span>
+      <span>RESTAURANTS</span>
+      <span>LOCAL BUSINESS</span>
+      <span>PROFESSIONAL SERVICES</span>
+    </div>
+  </div>
+</div>
+
+<!-- ================= WORK ================= -->
+<section class="projects" id="work">
+  <div class="container">
+
+    <div class="section-top reveal">
+      <div>
+        <div class="section-label">Selected Work</div>
+        <h2 class="section-title">
+          Concept websites designed like real businesses.
+        </h2>
+      </div>
+      <p class="section-description">
+        Self-created portfolio concepts showing how I approach different
+        industries, customer journeys and business goals.
+      </p>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- REAL ESTATE -->
+      <a href="#contact" class="project reveal">
+        <div class="project-image">
+          <img
+            src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85"
+            alt="Modern luxury real estate property website concept">
+        </div>
+        <div class="project-content">
+          <div class="project-number">01 / REAL ESTATE</div>
+          <h3>EstateHaus</h3>
+          <p>
+            Premium real estate website focused on property discovery,
+            trust-building and enquiry generation.
+          </p>
+          <span class="project-tag">Property Listings · Lead Generation</span>
+        </div>
+      </a>
+
+      <!-- INTERIOR -->
+      <a href="#contact" class="project reveal">
+        <div class="project-image">
+          <img
+            src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1400&q=85"
+            alt="Luxury interior design portfolio website concept">
+        </div>
+        <div class="project-content">
+          <div class="project-number">02 / INTERIOR DESIGN</div>
+          <h3>Forma Interiors</h3>
+          <p>
+            Elegant interior design portfolio built to showcase projects,
+            services and create premium brand perception.
+          </p>
+          <span class="project-tag">Portfolio · Projects · Enquiries</span>
+        </div>
+      </a>
+
+      <!-- RESTAURANT -->
+      <a href="#contact" class="project reveal">
+        <div class="project-image">
+          <img
+            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=85"
+            alt="Modern restaurant website concept">
+        </div>
+        <div class="project-content">
+          <div class="project-number">03 / RESTAURANT</div>
+          <h3>Ember &amp; Table</h3>
+          <p>
+            Modern restaurant website designed around menu discovery,
+            reservations and location information.
+          </p>
+          <span class="project-tag">Menu · Reservations · Location</span>
+        </div>
+      </a>
+
+      <!-- BUSINESS -->
+      <a href="#contact" class="project reveal">
+        <div class="project-image">
+          <img
+            src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=85"
+            alt="Modern professional business website concept">
+        </div>
+        <div class="project-content">
+          <div class="project-number">04 / BUSINESS</div>
+          <h3>Northline Studio</h3>
+          <p>
+            Professional service website designed to turn visitors into
+            qualified enquiries.
+          </p>
+          <span class="project-tag">Services · Trust · Contact</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section id="services">
+  <div class="container">
+
+    <div class="section-top reveal">
+      <div>
+        <div class="section-label">What I Do</div>
+        <h2 class="section-title">
+          Everything your business needs to build a stronger digital presence.
+        </h2>
+      </div>
+      <p class="section-description">
+        From the first design idea to the final launch, I handle the
+        website experience from start to finish.
+      </p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service reveal">
+        <div class="service-number">01</div>
+        <div class="service-icon">✦</div>
+        <h3>Website Design</h3>
+        <p>
+          Modern layouts, strong visual hierarchy, premium typography
+          and a design direction matched to your business.
+        </p>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-number">02</div>
+        <div class="service-icon">⌘</div>
+        <h3>Frontend Development</h3>
+        <p>
+          Responsive HTML, CSS and JavaScript builds that work smoothly
+          across phones, tablets and desktops.
+        </p>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-number">03</div>
+        <div class="service-icon">↗</div>
+        <h3>Lead Generation</h3>
+        <p>
+          Clear calls-to-action, WhatsApp integration, enquiry forms
+          and customer-focused page structures.
+        </p>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-number">04</div>
+        <div class="service-icon">◎</div>
+        <h3>Business Landing Pages</h3>
+        <p>
+          High-converting single-page websites for businesses that
+          need a professional online presence quickly.
+        </p>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-number">05</div>
+        <div class="service-icon">◈</div>
+        <h3>Website Redesign</h3>
+        <p>
+          Transform an outdated website into a modern, mobile-friendly
+          experience built around today's customer expectations.
+        </p>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-number">06</div>
+        <div class="service-icon">⚡</div>
+        <h3>Launch &amp; Support</h3>
+        <p>
+          Deployment, domain connection, testing, mobile QA and a
+          clean handover after launch.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= INDUSTRIES ================= -->
+<section class="industries">
+  <div class="container">
+
+    <div class="section-top reveal">
+      <div>
+        <div class="section-label">Industries</div>
+        <h2 class="section-title">
+          Websites tailored to the way your customers buy.
+        </h2>
+      </div>
+    </div>
+
+    <div class="industry-grid">
+
+      <div class="industry reveal">
+        <div class="industry-icon">🏠</div>
+        <h3>Real Estate</h3>
+        <p>Property discovery &amp; enquiries</p>
+      </div>
+
+      <div class="industry reveal">
+        <div class="industry-icon">🛋️</div>
+        <h3>Interior Design</h3>
+        <p>Portfolio &amp; premium branding</p>
+      </div>
+
+      <div class="industry reveal">
+        <div class="industry-icon">🍽️</div>
+        <h3>Restaurants</h3>
+        <p>Menus, reservations &amp; discovery</p>
+      </div>
+
+      <div class="industry reveal">
+        <div class="industry-icon">💼</div>
+        <h3>Local Businesses</h3>
+        <p>Trust &amp; lead generation</p>
+      </div>
+
+      <div class="industry reveal">
+        <div class="industry-icon">🏢</div>
+        <h3>Professional Services</h3>
+        <p>Authority &amp; enquiries</p>
+      </div>
+
+      <div class="industry reveal">
+        <div class="industry-icon">✨</div>
+        <h3>Personal Brands</h3>
+        <p>Portfolio &amp; positioning</p>
+      </div>
+
+      <div class="industry reveal">
+        <div class="industry-icon">🛒</div>
+        <h3>Small Brands</h3>
+        <p>Products &amp; online presence</p>
+      </div>
+
+      <div class="industry reveal">
+        <div class="industry-icon">🚀</div>
+        <h3>Startups</h3>
+        <p>Launch pages &amp; validation</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY ================= -->
+<section>
+  <div class="container">
+    <div class="why-grid">
+
+      <div class="reveal">
+        <div class="section-label">Why Govind Web Studio</div>
+        <h2 class="big-statement">
+          Your website shouldn't just <span>look good.</span>
+          It should have a job.
+        </h2>
+      </div>
+
+      <div class="features">
+
+        <div class="feature reveal">
+          <div class="feature-number">01</div>
+          <div>
+            <h3>Mobile-first experience</h3>
+            <p>
+              Your website is designed around the reality that many
+              customers will discover your business from their phone.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature reveal">
+          <div class="feature-number">02</div>
+          <div>
+            <h3>Conversion-focused structure</h3>
+            <p>
+              Important information, trust signals and CTAs are positioned
+              to make the next step obvious.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature reveal">
+          <div class="feature-number">03</div>
+          <div>
+            <h3>Premium visual identity</h3>
+            <p>
+              Your website gets a visual system that makes your business
+              feel established and professional.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature reveal">
+          <div class="feature-number">04</div>
+          <div>
+            <h3>Fast &amp; lightweight</h3>
+            <p>
+              Clean frontend implementation without unnecessary complexity
+              or bloated website builders.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature reveal">
+          <div class="feature-number">05</div>
+          <div>
+            <h3>Built around your business</h3>
+            <p>
+              The website isn't a generic template. Content and sections
+              are structured around your customers and services.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section class="process" id="process">
+  <div class="container">
+
+    <div class="section-top reveal">
+      <div>
+        <div class="section-label">My Process</div>
+        <h2 class="section-title">
+          From idea to live website.
+        </h2>
+      </div>
+      <p class="section-description">
+        A simple process designed to keep the project clear,
+        fast and focused on the final business outcome.
+      </p>
+    </div>
+
+    <div class="process-grid">
+
+      <div class="step reveal">
+        <div class="step-number">01 — DISCOVER</div>
+        <h3>Understand</h3>
+        <p>
+          Business, audience, services, location, competitors
+          and website goals.
+        </p>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-number">02 — DESIGN</div>
+        <h3>Plan</h3>
+        <p>
+          Page structure, content hierarchy, visual direction,
+          sections and conversion points.
+        </p>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-number">03 — BUILD</div>
+        <h3>Develop</h3>
+        <p>
+          Responsive frontend, interactions, forms, buttons,
+          animations and mobile navigation.
+        </p>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-number">04 — LAUNCH</div>
+        <h3>Deliver</h3>
+        <p>
+          Testing, deployment, domain setup and clean website
+          handover.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRICING ================= -->
+<section id="pricing">
+  <div class="container">
+
+    <div class="section-top reveal">
+      <div>
+        <div class="section-label">Website Packages</div>
+        <h2 class="section-title">
+          Simple packages. No confusing agency jargon.
+        </h2>
+      </div>
+      <p class="section-description">
+        Final pricing depends on the number of pages, features,
+        content and integrations required.
+      </p>
+    </div>
+
+    <div class="pricing-grid">
+
+      <div class="price-card reveal">
+        <h3>Starter</h3>
+        <p class="price-description">
+          For businesses that need a professional online presence.
+        </p>
+        <div class="price">
+          ₹7,999 <span>/ starting</span>
+        </div>
+        <ul class="price-list">
+          <li>1-page responsive website</li>
+          <li>Premium modern design</li>
+          <li>Mobile + desktop optimization</li>
+          <li>WhatsApp CTA</li>
+          <li>Contact section</li>
+          <li>Basic deployment</li>
+        </ul>
+        <a href="#contact" class="btn btn-secondary">Get Started</a>
+      </div>
+
+      <div class="price-card featured reveal">
+        <div class="popular">Most Popular</div>
+        <h3>Business</h3>
+        <p class="price-description">
+          For growing local businesses that need a complete website.
+        </p>
+        <div class="price">
+          ₹14,999 <span>/ starting</span>
+        </div>
+        <ul class="price-list">
+          <li>Up to 5 pages</li>
+          <li>Premium custom design</li>
+          <li>Mobile-first responsive build</li>
+          <li>Services / pricing sections</li>
+          <li>Gallery / portfolio</li>
+          <li>Reviews / testimonials</li>
+          <li>WhatsApp integration</li>
+          <li>Google Maps integration</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Build My Website</a>
+      </div>
+
+      <div class="price-card reveal">
+        <h3>Custom</h3>
+        <p class="price-description">
+          For businesses that need advanced functionality or unique design.
+        </p>
+        <div class="price">
+          Custom
+        </div>
+        <ul class="price-list">
+          <li>Custom page architecture</li>
+          <li>Advanced UI/UX</li>
+          <li>Custom interactions</li>
+          <li>Lead generation systems</li>
+          <li>Third-party integrations</li>
+          <li>Advanced functionality</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="#contact" class="btn btn-secondary">Discuss Project</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section class="testimonials">
+  <div class="container">
+
+    <div class="section-top reveal">
+      <div>
+        <div class="section-label">Client Experience</div>
+        <h2 class="section-title">
+          What a good website should feel like.
+        </h2>
+      </div>
+      <p class="section-description">
+        Example feedback format for future client projects.
+        Replace these with verified client testimonials as projects launch.
+      </p>
+    </div>
+
+    <div class="testimonial-grid">
+
+      <div class="testimonial reveal">
+        <div class="stars">★★★★★</div>
+        <p>
+          "Govind understood what we wanted and turned our ideas into
+          a clean, professional website that finally represents our business properly."
+        </p>
+        <div class="client">
+          <div class="client-avatar">RE</div>
+          <div>
+            <strong>Real Estate Business</strong>
+            <span>Website Project</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial reveal">
+        <div class="stars">★★★★★</div>
+        <p>
+          "The website feels much more premium than our old online presence.
+          The mobile experience is especially clean."
+        </p>
+        <div class="client">
+          <div class="client-avatar">ID</div>
+          <div>
+            <strong>Interior Design Studio</strong>
+            <span>Website Project</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial reveal">
+        <div class="stars">★★★★★</div>
+        <p>
+          "Everything was explained clearly, the design looked modern,
+          and the final website was focused on getting enquiries."
+        </p>
+        <div class="client">
+          <div class="client-avatar">LB</div>
+          <div>
+            <strong>Local Business</strong>
+            <span>Website Project</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="container">
+
+    <div class="section-top reveal">
+      <div>
+        <div class="section-label">FAQ</div>
+        <h2 class="section-title">
+          Questions before starting?
+        </h2>
+      </div>
+    </div>
+
+    <div class="faq-grid">
+
+      <div class="faq reveal">
+        <button>
+          How long does a website take?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            A simple business website can often be completed quickly.
+            The exact timeline depends on the number of pages, content,
+            revisions and features required.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq reveal">
+        <button>
+          Do you create mobile-friendly websites?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Yes. Every website is designed and tested for mobile,
+            tablet and desktop screen sizes.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq reveal">
+        <button>
+          Can you connect WhatsApp?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Yes. WhatsApp CTAs can be integrated throughout the website
+            so visitors can contact the business quickly.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq reveal">
+        <button>
+          Can you use my existing domain?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Yes. Existing domains can be connected to the new website
+            during the launch process.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq reveal">
+        <button>
+          Can you redesign my existing website?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Yes. Existing websites can be redesigned with a new visual
+            system, better mobile experience and clearer conversion paths.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq reveal">
+        <button>
+          How do I start?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Send a message with your business name, what your business
+            does and what you want your website to achieve. I'll use that
+            information to understand the project.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cta">
+  <div class="container">
+    <div class="cta-box reveal">
+      <h2>
+        Your business deserves a website that looks the part.
+      </h2>
+      <p>
+        Tell me about your business and I'll show you what a modern
+        website could look like for it.
+      </p>
+      <a href="#contact" class="btn btn-primary">Request a Free Demo ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+
+      <div class="contact-info reveal">
+        <div class="section-label">Start a Project</div>
+        <h2>
+          Let's build something your customers remember.
+        </h2>
+        <p>
+          Have a business without a website? Or an existing website
+          that doesn't represent your business anymore?
+          Let's discuss what could be improved.
+        </p>
+
+        <div class="contact-links">
+
+          <a class="contact-link" href="https://wa.me/918368781040" target="_blank" rel="noopener">
+            <div class="contact-link-icon">◉</div>
+            <div>
+              <small>WhatsApp</small>
+              <strong>+91 83687 81040</strong>
+            </div>
+          </a>
+
+          <a class="contact-link" href="mailto:hello@govindwebstudio.com">
+            <div class="contact-link-icon">✉</div>
+            <div>
+              <small>Email</small>
+              <strong>hello@govindwebstudio.com</strong>
+            </div>
+          </a>
+
+          <a class="contact-link" href="#work">
+            <div class="contact-link-icon">↗</div>
+            <div>
+              <small>Portfolio</small>
+              <strong>View selected work</strong>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <form class="contact-form reveal" id="contactForm">
+
+        <input class="input" type="text" placeholder="Your name" required>
+
+        <input class="input" type="text" placeholder="Business name" required>
+
+        <input class="input" type="tel" placeholder="WhatsApp number" required>
+
+        <select class="input" required>
+          <option value="">What type of website do you need?</option>
+          <option>Business Website</option>
+          <option>Real Estate Website</option>
+          <option>Interior Design Website</option>
+          <option>Restaurant Website</option>
+          <option>Portfolio Website</option>
+          <option>Website Redesign</option>
+          <option>Other</option>
+        </select>
+
+        <textarea class="input" placeholder="Tell me briefly about your business and what you want your website to achieve..."></textarea>
+
+        <button class="btn btn-primary" type="submit">
+          Request Free Demo ↗
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-copy">
+      © 2026 Govind Web Studio. All rights reserved.
+    </div>
+    <div class="footer-links">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+
+/* ================= NAVBAR ================= */
+
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 30){
+        navbar.classList.add("scrolled");
+    }else{
+        navbar.classList.remove("scrolled");
+    }
+
+});
+
+
+/* ================= MOBILE MENU ================= */
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+
+    navLinks.classList.toggle("open");
+
+    menuBtn.textContent =
+        navLinks.classList.contains("open") ? "✕" : "☰";
+
+});
+
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navLinks.classList.remove("open");
+        menuBtn.textContent = "☰";
+
+    });
+
+});
+
+
+/* ================= FAQ ================= */
+
+document.querySelectorAll(".faq button").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const answer = button.nextElementSibling;
+        const icon = button.querySelector("span");
+
+        document.querySelectorAll(".faq-answer").forEach(item => {
+
+            if(item !== answer){
+                item.style.maxHeight = null;
+            }
+
+        });
+
+        document.querySelectorAll(".faq button span").forEach(item => {
+
+            if(item !== icon){
+                item.textContent = "+";
+            }
+
+        });
+
+        if(answer.style.maxHeight){
+
+            answer.style.maxHeight = null;
+            icon.textContent = "+";
+
+        }else{
+
+            answer.style.maxHeight = answer.scrollHeight + "px";
+            icon.textContent = "−";
+
+        }
+
+    });
+
+});
+
+
+/* ================= SCROLL REVEAL ================= */
+
+const revealElements = document.querySelectorAll(".reveal");
+
+const revealObserver = new IntersectionObserver(
+
+    (entries) => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("active");
+                revealObserver.unobserve(entry.target);
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold:.12
+    }
+
+);
+
+revealElements.forEach(element => {
+    revealObserver.observe(element);
+});
+
+
+/* ================= CURSOR GLOW ================= */
+
+const cursorGlow = document.getElementById("cursorGlow");
+
+document.addEventListener("mousemove", e => {
+
+    cursorGlow.style.left = e.clientX + "px";
+    cursorGlow.style.top = e.clientY + "px";
+
+});
+
+
+/* ================= CONTACT FORM → WHATSAPP ================= */
+
+document.getElementById("contactForm").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const inputs = this.querySelectorAll("input");
+
+    const name = inputs[0].value;
+    const business = inputs[1].value;
+    const phone = inputs[2].value;
+
+    const select = this.querySelector("select");
+    const websiteType = select.value;
+
+    const textarea = this.querySelector("textarea");
+    const details = textarea.value;
+
+    const message =
+        `Hi Govind, I want to discuss a website project.%0A%0A` +
+        `Name: ${encodeURIComponent(name)}%0A` +
+        `Business: ${encodeURIComponent(business)}%0A` +
+        `WhatsApp: ${encodeURIComponent(phone)}%0A` +
+        `Website Type: ${encodeURIComponent(websiteType)}%0A` +
+        `Details: ${encodeURIComponent(details)}`;
+
+    window.open(
+        `https://wa.me/918368781040?text=${message}`,
+        "_blank"
+    );
+
+});
+
+</script>
+
+</body>
+  </html
