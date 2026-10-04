@@ -93,8 +93,9 @@ button{
 }
 
 .navbar.scrolled{
-    background:rgba(6,6,12,.82);
-    backdrop-filter:blur(20px);
+    background:rgba(5,5,12,.68); /*(6,6,12,.82);*/
+    backdrop-filter:blur(18px); /*20px*/
+    -webkit-backdrop-filter:blur(18px);
     border-bottom:1px solid var(--border);
 }
 
@@ -114,10 +115,24 @@ button{
 }
 
 .logo-img{
-    height:40px;
+    height:42px;
     width:auto;
     display:block;
 }
+    /* subtle premium glow */
+    filter:
+        drop-shadow(0 0 10px rgba(168,85,247,.18))
+        drop-shadow(0 0 18px rgba(34,211,238,.08));
+
+    transition:.3s ease;
+}
+
+.logo:hover .logo-img{
+    transform:translateY(-1px);
+    filter:
+        drop-shadow(0 0 12px rgba(168,85,247,.30))
+        drop-shadow(0 0 22px rgba(34,211,238,.14));
+    }
 
 @media(max-width:600px){
     .logo-img{
